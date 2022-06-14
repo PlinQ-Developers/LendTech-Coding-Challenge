@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="appLauncherText">30sp</dimen>
+    <dimen name="appNormalText">16sp</dimen>
+    <dimen name="appMinimalText">12sp</dimen>
+    <dimen name="appTitleText">18sp</dimen>
+    <dimen name="appNameText">24sp</dimen>
+    <dimen name="appFiguresText">34sp</dimen>
+
+    <dimen name="appListText">14sp</dimen>
+</resources>

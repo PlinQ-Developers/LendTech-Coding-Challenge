@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/ic_card"
+    android:padding="10dp"
+    android:gravity="center_vertical"
+    android:layout_marginBottom="8dp"
+    android:backgroundTint="@color/appGrayLight">
+
+    <RelativeLayout
+        android:id="@+id/transactions_initials_container"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@drawable/ic_input"
+        android:backgroundTint="@color/appPrimary">
+
+        <TextView
+            android:id="@+id/transactions_initials"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:fontFamily="@font/font_bold"
+            android:textColor="@color/appBackground"
+            android:textSize="@dimen/appNormalText" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="2"
+        android:layout_marginStart="10dp"
+        android:baselineAligned="false"
+        android:orientation="horizontal"
+        android:layout_toEndOf="@+id/transactions_initials_container"
+        android:id="@+id/transaction_details_container">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/transaction_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:fontFamily="@font/font_bold"
+                android:maxLines="1"
+                android:textColor="@color/appBlack"
+                android:textSize="@dimen/appListText" />
+
+            <TextView
+                android:id="@+id/transaction_type"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/transaction_name"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/font_regular"
+                android:maxLines="1"
+                android:textSize="@dimen/appListText" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:maxLines="1"
+                android:ellipsize="end"
+                android:gravity="end"
+                android:id="@+id/transaction_amount"
+                android:fontFamily="@font/font_bold"
+                android:textSize="@dimen/appNormalText" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:maxLines="1"
+                android:ellipsize="end"
+                android:gravity="end"
+                android:layout_below="@+id/transaction_amount"
+                android:id="@+id/transaction_date"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/font_regular"
+                android:textSize="@dimen/appListText" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>

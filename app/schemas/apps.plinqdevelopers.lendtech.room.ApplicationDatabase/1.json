@@ -1,0 +1,164 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 1,
+    "identityHash": "b3112cd139b078fd803192fec1822988",
+    "entities": [
+      {
+        "tableName": "accountsTable",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`authID` TEXT NOT NULL, `authName` TEXT NOT NULL, `authEmail` TEXT NOT NULL, `authPassword` TEXT NOT NULL, `authToken` TEXT NOT NULL, `authProfile` TEXT NOT NULL, PRIMARY KEY(`authID`))",
+        "fields": [
+          {
+            "fieldPath": "authID",
+            "columnName": "authID",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "authName",
+            "columnName": "authName",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "authEmail",
+            "columnName": "authEmail",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "authPassword",
+            "columnName": "authPassword",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "authToken",
+            "columnName": "authToken",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "authProfile",
+            "columnName": "authProfile",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "authID"
+          ],
+          "autoGenerate": false
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "walletsTable",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`walletID` TEXT NOT NULL, `accountID` TEXT NOT NULL, `balance` TEXT NOT NULL, PRIMARY KEY(`walletID`))",
+        "fields": [
+          {
+            "fieldPath": "walletID",
+            "columnName": "walletID",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "accountID",
+            "columnName": "accountID",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "balance",
+            "columnName": "balance",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "walletID"
+          ],
+          "autoGenerate": false
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "transactionsTable",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`transactionID` TEXT NOT NULL, `accountID` TEXT NOT NULL, `transactionFrom` TEXT, `transactionTo` TEXT, `transactionDate` TEXT NOT NULL, `transactionAmount` TEXT NOT NULL, `transactionBank` TEXT, `transactionMobile` TEXT NOT NULL, `transactionType` TEXT NOT NULL, PRIMARY KEY(`transactionID`))",
+        "fields": [
+          {
+            "fieldPath": "transactionID",
+            "columnName": "transactionID",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "accountID",
+            "columnName": "accountID",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "transactionFrom",
+            "columnName": "transactionFrom",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "transactionTo",
+            "columnName": "transactionTo",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "transactionDate",
+            "columnName": "transactionDate",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "transactionAmount",
+            "columnName": "transactionAmount",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "transactionBank",
+            "columnName": "transactionBank",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "transactionMobile",
+            "columnName": "transactionMobile",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "transactionType",
+            "columnName": "transactionType",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "transactionID"
+          ],
+          "autoGenerate": false
+        },
+        "indices": [],
+        "foreignKeys": []
+      }
+    ],
+    "views": [],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'b3112cd139b078fd803192fec1822988')"
+    ]
+  }
+}

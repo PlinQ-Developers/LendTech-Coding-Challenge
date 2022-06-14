@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/appBackground"
+    android:id="@+id/auth_fragment"
+    tools:context=".ui.auth.AuthFragment">
+
+
+    <TextView
+        android:id="@+id/auth_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/font_bold"
+        android:gravity="center"
+        android:padding="10dp"
+        android:text="Login"
+        android:textColor="@color/appBlack"
+        android:textSize="@dimen/appNameText" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/login_email_container"
+        android:padding="20dp"
+        android:layout_below="@+id/auth_toolbar">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/appMinimalText"
+            android:fontFamily="@font/font_regular"
+            android:textColor="@color/appGrayDark"
+            android:text="Email Address"
+            android:id="@+id/auth_email_hint" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/auth_email_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/auth_email_hint"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            app:hintEnabled="false"
+            android:layout_marginTop="8dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/auth_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/ic_input"
+                android:hint="name@email.com"
+                android:inputType="textEmailAddress"
+                android:fontFamily="@font/font_medium"
+                android:textSize="@dimen/appNormalText"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_below="@+id/login_email_container"
+        android:id="@+id/email_validation_container">
+
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/validate_email_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:focusable="true"
+            android:backgroundTint="@color/appPrimary"
+            android:contentDescription="@string/image_description"
+            android:src="@drawable/ic_app_validate" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/login_password_container"
+        android:padding="20dp"
+        android:visibility="gone"
+        android:layout_below="@+id/login_email_container">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/appMinimalText"
+            android:fontFamily="@font/font_regular"
+            android:textColor="@color/appGrayDark"
+            android:text="Password"
+            android:id="@+id/auth_password_hint" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/auth_password_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/auth_password_hint"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            app:hintEnabled="false"
+            app:passwordToggleEnabled="true"
+            android:layout_marginTop="8dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/auth_password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/ic_input"
+                android:hint="Password"
+                android:inputType="textPassword"
+                android:fontFamily="@font/font_medium"
+                android:textSize="@dimen/appNormalText"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/login_password_container"
+        android:padding="20dp"
+        android:layout_marginTop="20dp"
+        android:visibility="gone"
+        android:id="@+id/login_button_container">
+
+
+        <Button
+            android:id="@+id/login_button"
+            android:layout_width="match_parent"
+            android:background="@drawable/ic_card"
+            android:layout_height="wrap_content"
+            android:text="LogIn"
+            android:textColor="@color/appBackground"
+            android:textAllCaps="false"
+            android:textSize="@dimen/appTitleText"
+            android:fontFamily="@font/font_bold"/>
+
+    </RelativeLayout>
+
+    <ProgressBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/loading_progress"
+        android:layout_centerInParent="true"
+        android:padding="5dp"
+        android:visibility="gone"
+        android:background="@drawable/ic_card" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="25dp"
+        android:layout_alignParentBottom="true"
+        android:visibility="gone"
+        android:background="@color/appBackground"
+        android:id="@+id/error_container">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/auth_error"
+            android:fontFamily="@font/font_medium"
+            android:textSize="@dimen/appNormalText"
+            android:textColor="@color/appBlack" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ic_card"
+            android:fontFamily="@font/font_bold"
+            android:textSize="@dimen/appNormalText"
+            android:layout_below="@+id/auth_error"
+            android:layout_marginTop="15dp"
+            android:text="Close Window"
+            android:id="@+id/close_error_button"
+            android:textColor="@color/appBackground"
+            android:textAllCaps="false" />
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

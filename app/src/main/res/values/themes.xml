@@ -1,0 +1,16 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.LendTech" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/appPrimary</item>
+        <item name="colorPrimaryVariant">@color/appBackground</item>
+        <item name="colorOnPrimary">@color/appPrimary</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/appBackground</item>
+        <item name="colorSecondaryVariant">@color/appPrimary</item>
+        <item name="colorOnSecondary">@color/appBackground</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
+        <!-- Customize your theme here. -->
+    </style>
+</resources>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="menu_home">Home</string>
+    <string name="menu_payments">Payments</string>
+    <string name="menu_loans">Loans</string>
+    <string name="app_launcher_text">Developed by PlinQ Developers</string>
+    <string name="image_description">Action image description</string>
+    <string name="home_transactions_name">Recent Transactions</string>
+    <string name="home_actions_name">Quick Actions</string>
+    <string name="action_payments">Payments</string>
+    <string name="action_loans">Loans</string>
+    <string name="action_pay_loans">Pay Loans</string>
+    <string name="wallet_greeting">Hi,</string>
+</resources>

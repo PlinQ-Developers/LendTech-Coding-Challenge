@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/home_fragment"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/appBackground"
+    android:padding="15dp"
+    tools:context=".ui.home.HomeFragment">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/home_details_container">
+
+        <RelativeLayout
+            android:id="@+id/home_wallet_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ic_card">
+
+            <TextView
+                android:id="@+id/wallet_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/font_light"
+                android:gravity="center"
+                android:textColor="@color/appBackground"
+                android:textSize="@dimen/appNormalText" />
+
+            <RelativeLayout
+                android:id="@+id/wallet_details_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/wallet_name"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/ic_card"
+                android:padding="15dp">
+
+                <TextView
+                    android:id="@+id/wallet_amount"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:fontFamily="@font/font_light"
+                    android:gravity="center"
+                    android:textColor="@color/appBackground"
+                    android:textSize="@dimen/appFiguresText" />
+
+                <TextView
+                    android:id="@+id/wallet_loan_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/font_regular"
+                    android:text="Loan balance"
+                    android:gravity="center"
+                    android:layout_marginBottom="20dp"
+                    android:layout_below="@+id/wallet_amount"
+                    android:textColor="@color/appGrayLight"
+                    android:textSize="@dimen/appMinimalText" />
+
+                <ImageView
+                    android:id="@+id/wallet_more_actions"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_below="@+id/wallet_loan_name"
+                    android:layout_centerHorizontal="true"
+                    android:background="@drawable/ic_round"
+                    android:backgroundTint="@color/appGrayLight"
+                    android:contentDescription="@string/image_description"
+                    android:padding="8dp"
+                    android:layout_marginBottom="10dp"
+                    android:src="@drawable/ic_app_right" />
+
+            </RelativeLayout>
+
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/actions_parent_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:baselineAligned="false"
+            android:orientation="horizontal"
+            android:layout_below="@+id/home_wallet_container"
+            android:weightSum="3">
+
+            <RelativeLayout
+                android:id="@+id/action_payments"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="5dp"
+                android:layout_weight="1"
+                android:background="@drawable/ic_card"
+                android:backgroundTint="@color/appGrayLight"
+                android:padding="5dp">
+
+                <ImageView
+                    android:id="@+id/action_payments_icon"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="10dp"
+                    android:contentDescription="@string/image_description"
+                    android:src="@drawable/ic_action_loans" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/action_payments_icon"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:fontFamily="@font/font_medium"
+                    android:text="@string/action_payments"
+                    android:textColor="@color/appGrayDark"
+                    android:textSize="@dimen/appNormalText" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/action_loans"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_weight="1"
+                android:background="@drawable/ic_card"
+                android:backgroundTint="@color/appGrayLight"
+                android:padding="5dp">
+
+                <ImageView
+                    android:id="@+id/action_loans_icon"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="10dp"
+                    android:contentDescription="@string/image_description"
+                    android:src="@drawable/ic_action_payment" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/action_loans_icon"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:fontFamily="@font/font_medium"
+                    android:text="@string/action_loans"
+                    android:textColor="@color/appGrayDark"
+                    android:textSize="@dimen/appNormalText" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/action_pay"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_weight="1"
+                android:background="@drawable/ic_card"
+                android:backgroundTint="@color/appGrayLight"
+                android:padding="5dp">
+
+                <ImageView
+                    android:id="@+id/action_pay_icon"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="10dp"
+                    android:contentDescription="@string/image_description"
+                    android:src="@drawable/ic_action_wallet" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/action_pay_icon"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:fontFamily="@font/font_medium"
+                    android:text="@string/action_pay_loans"
+                    android:textColor="@color/appGrayDark"
+                    android:textSize="@dimen/appNormalText" />
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/home_transactions_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/actions_parent_container"
+            android:layout_marginTop="40dp">
+
+            <TextView
+                android:id="@+id/home_transactions_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/font_medium"
+                android:text="@string/home_transactions_name"
+                android:textColor="@color/appBlack"
+                android:textSize="@dimen/appNameText" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:padding="15dp"
+                android:id="@+id/error_text"
+                android:visibility="gone"
+                android:layout_below="@+id/home_transactions_title"
+                android:layout_marginTop="30dp"
+                android:textColor="@color/appRed" />
+
+            <ProgressBar
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:visibility="gone"
+                android:layout_below="@+id/home_transactions_title"
+                android:id="@+id/loading_progress"
+                android:layout_centerHorizontal="true" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/home_transactions_list"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/home_transactions_title"
+                android:layout_marginTop="15dp"
+                tools:listitem="@layout/layout_transaction_item" />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</ScrollView>

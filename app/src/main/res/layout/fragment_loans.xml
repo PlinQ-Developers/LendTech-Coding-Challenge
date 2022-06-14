@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/appBackground"
+    android:id="@+id/loans_fragment"
+    tools:context=".ui.loans.LoansFragment">
+
+    <TextView
+        android:id="@+id/loans_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/font_bold"
+        android:gravity="center"
+        android:padding="10dp"
+        android:text="Transactions"
+        android:textColor="@color/appBlack"
+        android:textSize="@dimen/appNameText" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/loans_toolbar"
+        android:id="@+id/loans_filter_container"
+        android:layout_marginTop="15dp"
+        android:orientation="horizontal"
+        android:weightSum="2"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"
+        android:baselineAligned="false">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/filter_from_container"
+            android:layout_marginEnd="5dp"
+            android:layout_weight="1">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/appMinimalText"
+                android:fontFamily="@font/font_light"
+                android:textColor="@color/appGrayDark"
+                android:text="From:"
+                android:id="@+id/from_hint" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/from_text_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/from_hint"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                app:hintEnabled="false"
+                android:layout_marginTop="8dp">
+
+                <AutoCompleteTextView
+                    android:id="@+id/from"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/ic_input"
+                    android:hint="OCT, 2021" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/filter_to_container"
+            android:layout_marginStart="5dp"
+            android:layout_weight="1">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/appMinimalText"
+                android:fontFamily="@font/font_light"
+                android:textColor="@color/appGrayDark"
+                android:text="To:"
+                android:id="@+id/to_hint" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/to_text_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/to_hint"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                app:hintEnabled="false"
+                android:layout_marginTop="8dp">
+
+                <AutoCompleteTextView
+                    android:id="@+id/to"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/ic_input"
+                    android:hint="OCT, 2021" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/ic_card"
+        android:layout_below="@+id/loans_filter_container"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"
+        android:textColor="@color/appBackground"
+        android:fontFamily="@font/font_bold"
+        android:text="Filter List"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="15dp"
+        android:id="@+id/filter_button" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/filter_button"
+        android:padding="15dp"
+        android:id="@+id/loans_transactions_list">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/font_bold"
+            android:textSize="@dimen/appTitleText"
+            android:textColor="@color/appBlack"
+            android:text="Transactions"
+            android:id="@+id/payment_transaction_title" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/payment_transactions_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/payment_transaction_title"
+            android:layout_marginTop="10dp"
+            tools:listitem="@layout/layout_transaction_item" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="15dp"
+            android:id="@+id/error_text"
+            android:visibility="gone"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="30dp"
+            android:textColor="@color/appRed" />
+
+        <ProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:layout_centerInParent="true"
+            android:id="@+id/loading_progress" />
+
+    </RelativeLayout>
+
+</RelativeLayout>
