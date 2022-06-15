@@ -39,25 +39,27 @@
             android:layout_weight="1">
 
             <TextView
+                android:id="@+id/from_hint"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="@dimen/appMinimalText"
                 android:fontFamily="@font/font_light"
-                android:textColor="@color/appGrayDark"
                 android:text="From:"
-                android:id="@+id/from_hint" />
+                android:textColor="@color/appGrayDark"
+                android:textSize="@dimen/appMinimalText" />
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/from_text_container"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/from_hint"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 app:hintEnabled="false"
                 android:layout_marginTop="8dp">
 
-                <AutoCompleteTextView
+                <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/from"
+                    android:clickable="false"
+                    android:focusable="false"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@drawable/ic_input"
@@ -75,25 +77,27 @@
             android:layout_weight="1">
 
             <TextView
+                android:id="@+id/to_hint"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="@dimen/appMinimalText"
                 android:fontFamily="@font/font_light"
-                android:textColor="@color/appGrayDark"
                 android:text="To:"
-                android:id="@+id/to_hint" />
+                android:textColor="@color/appGrayDark"
+                android:textSize="@dimen/appMinimalText" />
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/to_text_container"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/to_hint"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 app:hintEnabled="false"
                 android:layout_marginTop="8dp">
 
-                <AutoCompleteTextView
+                <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/to"
+                    android:clickable="false"
+                    android:focusable="false"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@drawable/ic_input"
@@ -106,18 +110,18 @@
     </LinearLayout>
 
     <Button
+        android:id="@+id/filter_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/ic_card"
         android:layout_below="@+id/payments_filter_container"
         android:layout_marginStart="15dp"
+        android:layout_marginTop="20dp"
         android:layout_marginEnd="15dp"
-        android:textColor="@color/appBackground"
+        android:layout_marginBottom="15dp"
+        android:background="@drawable/ic_card"
         android:fontFamily="@font/font_bold"
         android:text="Filter List"
-        android:layout_marginTop="20dp"
-        android:layout_marginBottom="15dp"
-        android:id="@+id/filter_button" />
+        android:textColor="@color/appBackground" />
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -136,12 +140,26 @@
             android:id="@+id/payment_transaction_title" />
 
         <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/payment_transactions_list"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:id="@+id/payment_transactions_list"
-            tools:listitem="@layout/layout_transaction_item"
             android:layout_below="@+id/payment_transaction_title"
-            android:layout_marginTop="10dp" />
+            android:layout_marginTop="10dp"
+            tools:listitem="@layout/layout_transaction_item" />
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:fontFamily="@font/font_medium"
+            android:layout_centerInParent="true"
+            android:background="@drawable/ic_card"
+            android:backgroundTint="@color/appGrayLight"
+            android:padding="15dp"
+            android:textColor="@color/appRed"
+            android:id="@+id/list_error_text"
+            android:visibility="gone" />
 
     </RelativeLayout>
 

@@ -24,6 +24,10 @@ constructor(
         return repository.getFilteredTransactions(filterType = filter).asLiveData()
     }
 
+    fun filterDates(from : Long, to : Long, filter : String) : LiveData<List<DomainTransaction>> {
+        return repository.getDateFilteredTransactions(from = from, to = to, filter = filter).asLiveData()
+    }
+
     val appPreferences : Flow<DomainPreferences> = preferences.preferencesFlow
 
 }

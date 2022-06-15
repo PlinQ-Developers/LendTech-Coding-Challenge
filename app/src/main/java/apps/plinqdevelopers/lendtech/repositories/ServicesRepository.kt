@@ -56,5 +56,9 @@ constructor(
         return applicationDAO.getFilteredTransactions(filterType = filterType)
     }
 
+    fun getDateFilteredTransactions(from : Long, to : Long, filter : String) : Flow<List<DomainTransaction>> {
+        return applicationDAO.getSortedTransactions(startDate = from, endDate = to, filterType = filter)
+    }
+
 }
 

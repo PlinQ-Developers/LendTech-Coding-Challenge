@@ -56,8 +56,8 @@ interface ApplicationDAO {
     @Query("SELECT * FROM transactionsTable WHERE transactionType = :filterType")
     fun getFilteredTransactions(filterType : String) : Flow<List<DomainTransaction>>
 
-    @Query("SELECT * FROM transactionsTable WHERE transactionDate <= :startDate AND transactionDate >= :endDate")
-    fun getSortedTransactions(startDate : String, endDate : String) : List<DomainTransaction>
+    @Query("SELECT * FROM transactionsTable WHERE transactionDate >= :startDate AND transactionDate <= :endDate AND transactionType = :filterType")
+    fun getSortedTransactions(startDate : Long, endDate : Long, filterType : String) : Flow<List<DomainTransaction>>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun updateTransactionsTable(transactions : List<DomainTransaction>)
