@@ -60,7 +60,8 @@
                 android:layout_marginTop="8dp"
                 android:fontFamily="@font/font_regular"
                 android:maxLines="1"
-                android:textSize="@dimen/appListText" />
+                android:ellipsize="end"
+                android:textSize="@dimen/appMinimalText" />
 
         </RelativeLayout>
 
@@ -70,13 +71,13 @@
             android:layout_weight="1">
 
             <TextView
+                android:id="@+id/transaction_amount"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:maxLines="1"
                 android:ellipsize="end"
-                android:gravity="end"
-                android:id="@+id/transaction_amount"
                 android:fontFamily="@font/font_bold"
+                android:gravity="end"
+                android:maxLines="1"
                 android:textSize="@dimen/appNormalText" />
 
             <TextView
@@ -89,7 +90,7 @@
                 android:id="@+id/transaction_date"
                 android:layout_marginTop="8dp"
                 android:fontFamily="@font/font_regular"
-                android:textSize="@dimen/appListText" />
+                android:textSize="@dimen/appMinimalText" />
 
         </RelativeLayout>
 

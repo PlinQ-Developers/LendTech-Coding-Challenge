@@ -30,21 +30,7 @@ class LoansAdapter  : ListAdapter<DomainTransaction, LoansAdapter.PaymentsViewHo
 
                     transactionAmount.setTextColor(R.color.appGreen)
 
-                } else {
-                    val name = transaction.transactionTo
-                    val date: String = transaction.transactionDate.toString()
-                    val timestamp  = date.split(" ")
-                    val formattedDate = timestamp[1] + ", " + timestamp[2] + " " + timestamp[5]
-
-                    transactionsInitials.text = getNameInitials(name = name)
-                    transactionName.text = "To: ${transaction.transactionTo}"
-                    transactionType.text = "Mobile: ${transaction.transactionMobile}"
-                    transactionAmount.text = "- ${transaction.transactionAmount} KES"
-                    transactionDate.text = formattedDate
-
-                    transactionAmount.setTextColor(R.color.appRed)
                 }
-
             }
         }
     }

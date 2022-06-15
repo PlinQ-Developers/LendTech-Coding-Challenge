@@ -15,36 +15,18 @@ class PaymentsAdapter : ListAdapter<DomainTransaction, PaymentsAdapter.PaymentsV
     inner class PaymentsViewHolder(private val binding : LayoutTransactionItemBinding) : RecyclerView.ViewHolder(binding.root) {
         fun bind(transaction : DomainTransaction) {
             binding.apply {
-                val type : String = transaction.transactionType
-                if (type == "received") {
-                    val name = transaction.transactionFrom
-                    val date : String = transaction.transactionDate.toString()
-                    val timestamp  = date.split(" ")
-                    val formattedDate = timestamp[1] + ", " + timestamp[2] + " " + timestamp[5]
+                transactionAmount.setTextColor(R.color.appRed)
 
-                    transactionsInitials.text = getNameInitials(name = name)
-                    transactionName.text = "From: ${transaction.transactionFrom}"
-                    transactionType.text = "Bank: ${transaction.transactionBank}"
-                    transactionAmount.text = "+ ${transaction.transactionAmount} KES"
-                    transactionDate.text = formattedDate
+                val name = transaction.transactionTo
+                val date: String = transaction.transactionDate.toString()
+                val timestamp  = date.split(" ")
+                val formattedDate = timestamp[1] + ", " + timestamp[2] + " " + timestamp[5]
 
-                    transactionAmount.setTextColor(R.color.appGreen)
-
-                } else {
-                    val name = transaction.transactionTo
-                    val date: String = transaction.transactionDate.toString()
-                    val timestamp  = date.split(" ")
-                    val formattedDate = timestamp[1] + ", " + timestamp[2] + " " + timestamp[5]
-
-                    transactionsInitials.text = getNameInitials(name = name)
-                    transactionName.text = "To: ${transaction.transactionTo}"
-                    transactionType.text = "Mobile: ${transaction.transactionMobile}"
-                    transactionAmount.text = "- ${transaction.transactionAmount} KES"
-                    transactionDate.text = formattedDate
-
-                    transactionAmount.setTextColor(R.color.appRed)
-                }
-
+                transactionsInitials.text = getNameInitials(name = name)
+                transactionName.text = "To: ${transaction.transactionTo}"
+                transactionType.text = "Mobile: ${transaction.transactionMobile}"
+                transactionAmount.text = "- ${transaction.transactionAmount} KES"
+                transactionDate.text = formattedDate
             }
         }
     }

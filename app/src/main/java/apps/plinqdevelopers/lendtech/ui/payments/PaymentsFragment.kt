@@ -88,7 +88,7 @@ class PaymentsFragment : Fragment() {
 
     private fun onSelectStart() {
         binding.apply {
-            filterFromContainer.setOnClickListener {
+            from.setOnClickListener {
                 val datePickers =
                     MaterialDatePicker.Builder.datePicker()
                         .setTitleText("Select date")
@@ -105,7 +105,7 @@ class PaymentsFragment : Fragment() {
 
     private fun onSelectEnd() {
         binding.apply {
-            filterToContainer.setOnClickListener {
+            to.setOnClickListener {
                 val datePickers =
                     MaterialDatePicker.Builder.datePicker()
                         .setTitleText("Select date")
