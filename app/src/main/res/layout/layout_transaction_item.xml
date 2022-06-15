@@ -21,8 +21,9 @@
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
             android:fontFamily="@font/font_bold"
+            android:textAllCaps="true"
             android:textColor="@color/appBackground"
-            android:textSize="@dimen/appNormalText" />
+            android:textSize="@dimen/appTitleText" />
 
     </RelativeLayout>
 

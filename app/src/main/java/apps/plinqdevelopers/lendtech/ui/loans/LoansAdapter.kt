@@ -17,12 +17,12 @@ class LoansAdapter  : ListAdapter<DomainTransaction, LoansAdapter.PaymentsViewHo
             binding.apply {
                 val type : String = transaction.transactionType
                 if (type == "received") {
-                    val name = transaction.transactionBank
-                    val date : String = transaction.transactionDate
-                    val timestamp : Long = date.toLong()
-                    val formattedDate = getDateTime(time = timestamp)
+                    val name = transaction.transactionFrom
+                    val date : String = transaction.transactionDate.toString()
+                    val timestamp  = date.split(" ")
+                    val formattedDate = timestamp[1] + ", " + timestamp[2] + " " + timestamp[5]
 
-                    //transactionsInitials.text = getNameInitials(name = name)
+                    transactionsInitials.text = getNameInitials(name = name)
                     transactionName.text = "From: ${transaction.transactionFrom}"
                     transactionType.text = "Bank: ${transaction.transactionBank}"
                     transactionAmount.text = "+ ${transaction.transactionAmount} KES"
@@ -31,12 +31,12 @@ class LoansAdapter  : ListAdapter<DomainTransaction, LoansAdapter.PaymentsViewHo
                     transactionAmount.setTextColor(R.color.appGreen)
 
                 } else {
-                    val name = transaction.transactionBank
-                    val date: String = transaction.transactionDate
-                    val timestamp: Long = date.toLong()
-                    val formattedDate = getDateTime(time = timestamp)
+                    val name = transaction.transactionTo
+                    val date: String = transaction.transactionDate.toString()
+                    val timestamp  = date.split(" ")
+                    val formattedDate = timestamp[1] + ", " + timestamp[2] + " " + timestamp[5]
 
-                    //transactionsInitials.text = getNameInitials(name = name)
+                    transactionsInitials.text = getNameInitials(name = name)
                     transactionName.text = "To: ${transaction.transactionTo}"
                     transactionType.text = "Mobile: ${transaction.transactionMobile}"
                     transactionAmount.text = "- ${transaction.transactionAmount} KES"
@@ -89,8 +89,9 @@ class LoansAdapter  : ListAdapter<DomainTransaction, LoansAdapter.PaymentsViewHo
         return if (name != null) {
             val splitName = name.split(" ")
             val firstName : String = splitName[0]
+            val lastName : String = splitName[1]
 
-            firstName.get(1) + "" + firstName.get(2)
+            firstName.get(0) + "" + lastName.get(0)
         } else {
             "O"
         }

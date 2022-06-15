@@ -4,6 +4,7 @@ import android.os.Parcelable
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 import kotlinx.parcelize.Parcelize
+import java.util.*
 
 @Parcelize
 @Entity(tableName = "transactionsTable")
@@ -18,7 +19,7 @@ data class DomainTransaction(
 
     val transactionTo : String?,
 
-    val transactionDate : String,
+    val transactionDate : Date,
 
     val transactionAmount : String,
 

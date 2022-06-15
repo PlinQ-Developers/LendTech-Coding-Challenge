@@ -2,6 +2,7 @@ package apps.plinqdevelopers.lendtech.data.network
 
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
+import java.util.*
 
 data class ApiTransaction(
 
@@ -23,7 +24,7 @@ data class ApiTransaction(
 
     @Expose
     @SerializedName("date")
-    val transactionDate : String,
+    val transactionDate : Date,
 
     @Expose
     @SerializedName("amount")

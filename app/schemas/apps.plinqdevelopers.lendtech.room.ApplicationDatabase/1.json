@@ -2,7 +2,7 @@
   "formatVersion": 1,
   "database": {
     "version": 1,
-    "identityHash": "b3112cd139b078fd803192fec1822988",
+    "identityHash": "9641bb92b31a59dca7fdda2510d3811e",
     "entities": [
       {
         "tableName": "accountsTable",
@@ -88,7 +88,7 @@
       },
       {
         "tableName": "transactionsTable",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`transactionID` TEXT NOT NULL, `accountID` TEXT NOT NULL, `transactionFrom` TEXT, `transactionTo` TEXT, `transactionDate` TEXT NOT NULL, `transactionAmount` TEXT NOT NULL, `transactionBank` TEXT, `transactionMobile` TEXT NOT NULL, `transactionType` TEXT NOT NULL, PRIMARY KEY(`transactionID`))",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`transactionID` TEXT NOT NULL, `accountID` TEXT NOT NULL, `transactionFrom` TEXT, `transactionTo` TEXT, `transactionDate` INTEGER NOT NULL, `transactionAmount` TEXT NOT NULL, `transactionBank` TEXT, `transactionMobile` TEXT NOT NULL, `transactionType` TEXT NOT NULL, PRIMARY KEY(`transactionID`))",
         "fields": [
           {
             "fieldPath": "transactionID",
@@ -117,7 +117,7 @@
           {
             "fieldPath": "transactionDate",
             "columnName": "transactionDate",
-            "affinity": "TEXT",
+            "affinity": "INTEGER",
             "notNull": true
           },
           {
@@ -158,7 +158,7 @@
     "views": [],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'b3112cd139b078fd803192fec1822988')"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '9641bb92b31a59dca7fdda2510d3811e')"
     ]
   }
 }
